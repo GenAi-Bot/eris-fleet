@@ -361,10 +361,9 @@
   dependencies:
     "ansi-colors" "^4.1.1"
 
-"eris@^0.17.1":
-  "integrity" "sha512-PexpHusPxViuzcsSM0GQEAgZRJbziFfeeLifc8+ZrvS88UusPieQlUD7pRm28E7m7rN+p+Rt6bf9jGLwD725Zg=="
-  "resolved" "https://registry.npmjs.org/eris/-/eris-0.17.1.tgz"
-  "version" "0.17.1"
+"eris@github:bit0r1n/eris":
+  "resolved" "git+ssh://git@github.com/bit0r1n/eris.git#c5e3119f401559c138535f5928dd448da4a0a1dd"
+  "version" "0.17.2-dev"
   dependencies:
     "ws" "^8.2.3"
   optionalDependencies:
@@ -1093,9 +1092,9 @@
   "version" "1.0.2"
 
 "ws@^8.2.3":
-  "integrity" "sha512-Gs5EZtpqZzLvmIM59w4igITU57lrtYVFneaa434VROv4thzJyV6UjIL3D42lslWlI+D4KzLYnxSwtfuiO79sNw=="
-  "resolved" "https://registry.npmjs.org/ws/-/ws-8.3.0.tgz"
-  "version" "8.3.0"
+  "integrity" "sha512-+s49uSmZpvtAsd2h37vIPy1RBusaLawVe8of+GyEPsaJTCMpj/2v8NpeK1SHXjBlQ95lQTmQofOJnFiLoaN3yw=="
+  "resolved" "https://registry.npmjs.org/ws/-/ws-8.10.0.tgz"
+  "version" "8.10.0"
 
 "yallist@^4.0.0":
   "integrity" "sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A=="
