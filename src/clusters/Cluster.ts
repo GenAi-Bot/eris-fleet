@@ -2,7 +2,7 @@ import { ClusterConnectMessage } from "./../util/Queue";
 import * as Eris from "eris";
 import {worker} from "cluster";
 import {BaseClusterWorker} from "./BaseClusterWorker";
-import {inspect} from "util";
+import {inspect, format} from "util";
 import {LoggingOptions, StartingStatus, ShardStats} from "../sharding/Admiral";
 import { CentralRequestHandler } from "../util/CentralRequestHandler";
 import { IPC } from "../util/IPC";
@@ -44,11 +44,11 @@ export class Cluster {
 		this.ipc = new IPC({fetchTimeout: input.fetchTimeout});
 
 		if (input.overrideConsole) {
-			console.log = (str: unknown) => {this.ipc.log(str);};
-			console.info = (str: unknown) => {this.ipc.info(str);};
-			console.debug = (str: unknown) => {this.ipc.debug(str);};
-			console.error = (str: unknown) => {this.ipc.error(str);};
-			console.warn = (str: unknown) => {this.ipc.warn(str);};
+			console.log = (...args) => {this.ipc.log(format(...args));};
+			console.info = (...args) => {this.ipc.info(format(...args));};
+			console.debug = (...args) => {this.ipc.debug(format(...args));};
+			console.error = (...args) => {this.ipc.error(format(...args));};
+			console.warn = (...args) => {this.ipc.warn(format(...args));};
 		}
 
 		//Spawns
