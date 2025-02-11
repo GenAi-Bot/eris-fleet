@@ -31,11 +31,11 @@ class Cluster {
         // add ipc
         this.ipc = new IPC_1.IPC({ fetchTimeout: input.fetchTimeout });
         if (input.overrideConsole) {
-            console.log = (str) => { this.ipc.log(str); };
-            console.info = (str) => { this.ipc.info(str); };
-            console.debug = (str) => { this.ipc.debug(str); };
-            console.error = (str) => { this.ipc.error(str); };
-            console.warn = (str) => { this.ipc.warn(str); };
+            console.log = (...args) => { this.ipc.log((0, util_1.format)(...args)); };
+            console.info = (...args) => { this.ipc.info((0, util_1.format)(...args)); };
+            console.debug = (...args) => { this.ipc.debug((0, util_1.format)(...args)); };
+            console.error = (...args) => { this.ipc.error((0, util_1.format)(...args)); };
+            console.warn = (...args) => { this.ipc.warn((0, util_1.format)(...args)); };
         }
         //Spawns
         process.on("uncaughtException", (err) => {
