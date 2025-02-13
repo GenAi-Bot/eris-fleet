@@ -1,7 +1,7 @@
 import {IPC} from "../util/IPC";
 
 /** @internal */
-export interface Setup {
+export interface BaseServiceWorkerSetup {
 	serviceName: string;
 	workerID: number;
 	ipc: IPC;
@@ -68,7 +68,7 @@ export class BaseServiceWorker {
 	*/
 	public shutdown?: (done: () => void) => void;
 
-	public constructor(setup: Setup) {
+	public constructor(setup: BaseServiceWorkerSetup) {
 		this.serviceName = setup.serviceName;
 		this.workerID = setup.workerID;
 		this.ipc = setup.ipc;

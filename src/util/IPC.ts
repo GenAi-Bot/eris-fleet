@@ -17,7 +17,7 @@ export interface IpcHandledLog {
 }
 
 /** @internal */
-export interface Setup {
+export interface IPCSetup {
 	fetchTimeout: number;
 	messageHandler?: (message: any) => void;
 }
@@ -145,7 +145,7 @@ export class IPC extends EventEmitter {
 	public centralStore: CentralStore;
 
 	/** @internal */
-	public constructor(setup: Setup) {
+	public constructor(setup: IPCSetup) {
 		super();
 		this.fetchTimeout = setup.fetchTimeout;
 		this.events = new Map();

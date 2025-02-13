@@ -2,7 +2,7 @@ import {IPC} from "../util/IPC";
 import {Client} from "eris";
 
 /** @internal */
-export interface Setup {
+export interface BaseClusterWorkerSetup {
 	bot: Client;
 	clusterID: number;
 	workerID: number;
@@ -65,7 +65,7 @@ export class BaseClusterWorker {
 	*/
 	public handleCommand?: (data: any) => any;
 
-	public constructor(setup: Setup) {
+	public constructor(setup: BaseClusterWorkerSetup) {
 		this.bot = setup.bot;
 		this.clusterID = setup.clusterID;
 		this.workerID = setup.workerID;
