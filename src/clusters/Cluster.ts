@@ -52,13 +52,9 @@ export class Cluster {
 		}
 
 		//Spawns
-		process.on("uncaughtException", (err: Error) => {
-			this.ipc.error(err);
-		});
+		process.on("uncaughtException", () => ({}));
 
-		process.on("unhandledRejection", (reason, promise) => {
-			this.ipc.error("Unhandled Rejection at: " + inspect(promise) + " reason: " + reason);
-		});
+		process.on("unhandledRejection", () => ({}));
 
 		if (process.send) process.send({op: "launched"});
 		
