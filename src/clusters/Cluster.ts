@@ -368,7 +368,7 @@ export class Cluster {
 		});
 
 		bot.on("error", (error: Error, id?: number) => {
-			this.ipc.error(error, `Cluster ${this.clusterID}, Shard ${id}`);
+			// this.ipc.error(error, `Cluster ${this.clusterID}, Shard ${id}`);
 		});
 
 		bot.on("ready", () => {
