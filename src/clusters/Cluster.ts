@@ -363,14 +363,6 @@ export class Cluster {
 			});
 		});
 
-		bot.on("warn", (message: string, id?: number) => {
-			this.ipc.warn(message, `Cluster ${this.clusterID}, Shard ${id}`);
-		});
-
-		bot.on("error", (error: Error, id?: number) => {
-			// this.ipc.error(error, `Cluster ${this.clusterID}, Shard ${id}`);
-		});
-
 		bot.on("ready", () => {
 			if (this.whatToLog.includes("cluster_ready")) this.ipc.log(`Shards ${this.firstShardID} - ${this.lastShardID} are ready!`);
 		});
